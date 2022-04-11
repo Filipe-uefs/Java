@@ -3,7 +3,7 @@ public class ArrayReferencia {
     public static void main(String[] args) {
 
         ContaCorrente[] contas = new ContaCorrente[4];
-        ContaCorrente conta1 = new ContaCorrente(484848, 1000F);
+        ContaCorrente conta1 = new ContaCorrente(484848, 1000F, "Filipe");
         ContaCorrente conta2 = new ContaCorrente();
         conta2.setNumero(1991919);
         conta2.setSaldo(2000F);

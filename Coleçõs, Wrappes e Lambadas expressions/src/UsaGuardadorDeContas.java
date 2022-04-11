@@ -4,8 +4,8 @@ public class UsaGuardadorDeContas {
 
         GuardadorDeContas guardador = new GuardadorDeContas();
 
-        ContaCorrente conta1 = new ContaCorrente(103333, 1000F);
-        ContaCorrente conta2 = new ContaCorrente(104444, 5500F);
+        ContaCorrente conta1 = new ContaCorrente(103333, 1000F, "Filipe");
+        ContaCorrente conta2 = new ContaCorrente(104444, 5500F, "Filipe");
         guardador.adicionar(conta1);
         guardador.adicionar(conta2);
 

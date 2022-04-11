@@ -6,9 +6,9 @@ public class UsaLinkedList {
     public static void main(String[] args) {
 
         LinkedList<ContaCorrente> lista = new LinkedList<>();
-        ContaCorrente conta1 = new ContaCorrente(103333, 1000F);
-        ContaCorrente conta2 = new ContaCorrente(104444, 5500F);
-        ContaCorrente conta3 = new ContaCorrente(104444, 5500F);
+        ContaCorrente conta1 = new ContaCorrente(103333, 1000F, "Filipe");
+        ContaCorrente conta2 = new ContaCorrente(104444, 5500F, "Filipe");
+        ContaCorrente conta3 = new ContaCorrente(104444, 5500F, "Filipe");
         lista.add(conta1);
         lista.add(conta2);
 
