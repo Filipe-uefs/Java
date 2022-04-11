@@ -5,16 +5,17 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BonusServiceTest {
 
     @Test
-    public void deveriaRetornarZeroParaBonusMuitoAlto() {
+    public void deveriaRetornarExceptionParaBonusMuitoAlto() {
 
         Funcionario funcionario = new Funcionario("Filipe", new BigDecimal(50000), 13333);
-        BigDecimal bonus = new BonusService().calcularBonus(funcionario);
+        BonusService service = new BonusService();
+        assertThrows(IllegalArgumentException.class, () -> service.calcularBonus(funcionario));
 
-        assertEquals(BigDecimal.ZERO, bonus);
     }
 
     @Test

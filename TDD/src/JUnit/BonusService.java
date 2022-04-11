@@ -9,7 +9,7 @@ public class BonusService {
         BigDecimal bonus = funcionario.getSalario().multiply(percentual);
 
         if(bonus.compareTo(new BigDecimal("1000")) > 0) {
-            bonus = BigDecimal.ZERO;
+            throw new IllegalArgumentException("Funcionario com salario mais que 10000, não deveria ocorrer");
         }
 
         return bonus;
