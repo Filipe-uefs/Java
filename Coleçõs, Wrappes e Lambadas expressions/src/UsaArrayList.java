@@ -7,10 +7,11 @@ public class UsaArrayList {
         ArrayList<ContaCorrente> lista = new ArrayList<>();
         ContaCorrente conta1 = new ContaCorrente(103333, 1000F);
         ContaCorrente conta2 = new ContaCorrente(104444, 5500F);
-        ContaCorrente conta3 = new ContaCorrente(1044422, 54500F);
+        ContaCorrente conta3 = new ContaCorrente(104444, 5500F);
         lista.add(conta1);
         lista.add(conta2);
-        lista.add(conta3);
+
+        System.out.println("Conta 3 ja existe na lista ? " + lista.contains(conta3));
         int tamanho = lista.size();
         System.out.println("Tamanho da lista " + tamanho);
         lista.remove(0);

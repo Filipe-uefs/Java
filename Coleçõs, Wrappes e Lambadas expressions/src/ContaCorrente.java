@@ -25,4 +25,10 @@ public class ContaCorrente {
     public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
+
+    @Override
+    public boolean equals(Object ref) {
+        ContaCorrente conta = (ContaCorrente) ref;
+        return (this.getSaldo() == conta.getSaldo() && this.getNumero() == conta.getNumero());
+    }
 }
