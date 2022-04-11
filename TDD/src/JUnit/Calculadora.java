@@ -1,3 +1,5 @@
+package JUnit;
+
 public class Calculadora {
 
     public Calculadora() {}
