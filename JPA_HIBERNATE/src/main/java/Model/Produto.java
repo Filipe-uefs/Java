@@ -19,7 +19,7 @@ public class Produto {
     private int codigoDeBarra;
 
     private BigDecimal preco;
-    
+
     public int getId() {
         return id;
     }
