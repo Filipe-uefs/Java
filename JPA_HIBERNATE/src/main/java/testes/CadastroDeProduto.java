@@ -1,6 +1,8 @@
 package testes;
 
-import Model.Produto;
+import dao.ProdutoDao;
+import model.Produto;
+import util.JPAUtil;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,10 +18,10 @@ public class CadastroDeProduto {
         produto.setPreco(new BigDecimal("4500"));
         produto.setNome("Xiaomi M3");
 
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("dbH2");
-        EntityManager entity = factory.createEntityManager();
+        EntityManager entity = JPAUtil.getEntityManager();
+        ProdutoDao dao = new ProdutoDao(entity);
         entity.getTransaction().begin();
-        entity.persist(produto);
+        dao.cadastrar(produto);
         entity.getTransaction().commit();
         entity.close();
     }
