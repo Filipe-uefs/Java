@@ -2,23 +2,26 @@ package model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "produtos")
 public class Produto {
 
+    public Produto() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String nome;
-
     private String descricao;
-
     @Column(name = "codigo_de_barra")
     private int codigoDeBarra;
-
     private BigDecimal preco;
+    private LocalDate dataCadastro = LocalDate.now();
+    @ManyToOne
+    private Categoria categoria;
 
     public int getId() {
         return id;
@@ -60,4 +63,11 @@ public class Produto {
         this.preco = preco;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 }
