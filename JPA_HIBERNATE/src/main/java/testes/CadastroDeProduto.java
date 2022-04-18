@@ -7,8 +7,6 @@ import model.Produto;
 import util.JPAUtil;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.math.BigDecimal;
 
 import static java.lang.System.out;
@@ -23,6 +21,7 @@ public class CadastroDeProduto {
         produto.setDescricao("Celular da Xiaomi com xxxx....");
         produto.setPreco(new BigDecimal("4500"));
         produto.setNome("Xiaomi M3");
+        produto.setCategoria(categoria);
 
         ProdutoDao dao = new ProdutoDao(entity);
         CategoriaDao categoriaDao = new CategoriaDao(entity);
@@ -37,8 +36,10 @@ public class CadastroDeProduto {
         cadastrarProduto(entity);
         ProdutoDao produtoDao = new ProdutoDao(entity);
         Produto produto = produtoDao.findProductById(1);
-        System.out.println(produto.getNome() + produto.getDescricao());
-        produtoDao.findAllProducts().forEach(produto1 -> out.println(produto1.getPreco()));
+        System.out.println(produto.getNome() + produto.getCategoria().getNome());
+        produtoDao.findProductByCategoria("celular").forEach(produto1 -> out.println(produto1.getPreco()));
+        BigDecimal price = produtoDao.findPriceOfProductByName("Xiaomi M3");
+        System.out.println("Preço do produto " + price);
         entity.close();
     }
 }
